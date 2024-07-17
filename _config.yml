@@ -22,7 +22,7 @@ title: My odin projects
 email: lesnier.estrada@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A compilation of all my programming projects for The Odin Project web development course
-baseurl: "/my-odin-projects/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://legaress.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Legaress
   
