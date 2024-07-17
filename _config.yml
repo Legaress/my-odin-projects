@@ -27,13 +27,9 @@ url: "https://legaress.github.io" # the base hostname & protocol for your site, 
 github_username:  Legaress
   
 # Build settings
-theme: jekyll-theme-architect
+theme: architect
 plugins:
   - jekyll-feed
-
-layout: page
-title: "My odin projects"
-permalink: /my-odin-projects/
 
 markdown: GFM
 
