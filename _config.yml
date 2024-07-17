@@ -24,12 +24,18 @@ description: >- # this means to ignore newlines until "baseurl:"
   A compilation of all my programming projects for The Odin Project web development course
 baseurl: "/my-odin-projects/" # the subpath of your site, e.g. /blog
 url: "https://legaress.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  legaress
+github_username:  Legaress
   
 # Build settings
-theme: architect
+theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
+
+layout: page
+title: "My odin projects"
+permalink: /my-odin-projects/
+
+markdown: GFM
 
 # Exclude from processing.
 # The following items will not be processed, by default.
