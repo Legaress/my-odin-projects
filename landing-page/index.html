@@ -1,46 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Discover the world of pretty cats on our awesome landing page">
-        <title>Pretty Cats - Your Purrfect Feline Destination</title>
-        <link rel="stylesheet" href="./styles/style.css">
-    </head>
-    <body>
-        <div class="app">
-            <header>
-                <nav>
-                    <div class="logo">
-                        <a href="#"><img src="./images/cat-logo.png" alt="Pretty Cat Logo"></a>
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="#breeds">Breeds</a></li>
-                        <li><a href="#care">Cat Care</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                    </ul>
-                </nav>
 
-                <div class="hero">
-                    <div class="hero-content">
-                        <h1>Pretty Cats: Feline Beauty Unleashed</h1>
-                        <p>Explore the enchanting world of pretty cats. From fluffy Persians to sleek Siamese, discover the diverse beauty of our feline friends.</p>
-                        <button class="cta-hero-button"><a href="#adopt">Adopt a Pretty Cat</a></button>
-                    </div>    
-                    
-                    <div class="hero-image">
-                        <img src="./images/pexels-chevonrossouw-2558605.jpg" alt="A beautiful cat with mesmerizing eyes" width="500" height="300">
-                    </div>
-                </div>    
-            </header>
-            
-            <main>
-                <!-- Add more sections about cat breeds, care tips, and photo gallery -->
-            </main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the world of pretty cats on our awesome landing page">
+    <title>Pretty Cats - Your Purrfect Feline Destination</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
 
-            <footer>
-                <p>&copy; 2023 Pretty Cats Paradise. All rights reserved.</p>
-            </footer>
-        </div>
-    </body>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo-container">
+                    <a href="#" class="logo">SH Pretty Cat</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#breeds" class="nav-link">Breeds</a></li>
+                    <li><a href="#care" class="nav-link">Cat Care</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                </ul>
+            </nav>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="heading-large">Pretty Cats: Feline Beauty Unleashed</h1>
+                    <p class="text-medium">Explore the enchanting world of pretty cats. From fluffy Persians to sleek
+                        Siamese, discover the diverse beauty of our feline friends.</p>
+                    <a href="#adopt" class="button button-primary">Adopt a Pretty Cat</a>
+                </div>
+
+                <div class="hero-image">
+                    <img src="./images/pexels-chevonrossouw-2558605.jpg" alt="A beautiful cat with mesmerizing eyes"
+                        class="img-responsive" width="500" height="300">
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="info-section">
+                <h2 class="heading-medium">Discover the World of Pretty Cats</h2>
+
+                <div class="cards-container">
+                    <div class="info-card">
+                        <div class="card">
+                            <img src="./images/persian-cat.jpg" alt="Persian cat" class="card-image">
+                        </div>
+                        <h3 class="card-title">Persian Cats</h3>
+                        <p class="card-description">Known for their luxurious long fur and sweet personalities, Persian
+                            cats are the epitome of feline elegance.</p>
+                        <a href="#persian" class="button button-secondary">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card">
+                            <img src="./images/siamese-cat.jpg" alt="Siamese cat" class="card-image">
+                        </div>
+                        <h3 class="card-title">Siamese Cats</h3>
+                        <p class="card-description">With their striking blue eyes and sleek coats, Siamese cats are
+                            known for their intelligence and vocal nature.</p>
+                        <a href="#siamese" class="button button-secondary">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card">
+                            <img src="./images/maine-coon-cat.jpg" alt="Maine Coon cat" class="card-image">
+                        </div>
+                        <h3 class="card-title">Maine Coon Cats</h3>
+                        <p class="card-description">Gentle giants of the cat world, Maine Coons are loved for their
+                            large size, tufted ears, and friendly demeanor.</p>
+                        <a href="#maine-coon" class="button button-secondary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="text-small text-center">&copy; 2024 Pretty Cats Paradise. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
 </html>
