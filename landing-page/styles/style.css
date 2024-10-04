@@ -48,6 +48,7 @@ body {
 .heading-medium {
 	font-size: var(--font-size-large);
 	color: var(--color-dark);
+	text-align: center;
 }
 
 .heading-small {
