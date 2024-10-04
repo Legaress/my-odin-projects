@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700;900&display=swap');
 
 :root {
 	/* Colors */
@@ -20,11 +20,15 @@
 	--spacing-small: 1rem;
 	--spacing-medium: 2rem;
 	--spacing-large: 3rem;
+
+	/* Font Families */
+	--font-logo: 'Fredoka One', cursive;
+	--font-main: 'Roboto', sans-serif;
 }
 
 /* Base Styles */
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--font-main);
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
@@ -130,31 +134,57 @@ a:hover {
 	flex-direction: column;
 	background-color: var(--color-dark);
 	padding: var(--spacing-medium) 10%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
 	display: flex;
-	flex-direction: column; /* Stack items vertically on small screens */
+	flex-direction: column;
+	/* Stack items vertically on small screens */
 	justify-content: space-between;
 	align-items: center;
-	gap: var(--spacing-small); /* Add space between logo and menu */
+	gap: var(--spacing-small);
+	/* Add space between logo and menu */
 }
 
-.logo-container > a {
+.logo {
+	font-family: var(--font-logo);
 	font-size: 1.5rem;
-	font-weight: 900;
+	color: var(--color-light);
+	text-decoration: none;
+	transition: color 0.3s ease, transform 0.3s ease;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container > a:hover {
+.logo:hover {
 	color: var(--color-accent);
+	transform: scale(1.05) rotate(-2deg);
 }
 
 .nav-menu {
 	display: flex;
-	flex-direction: column; /* Stack menu items vertically on small screens */
+	flex-direction: column;
+	/* Stack menu items vertically on small screens */
 	align-items: center;
 	list-style-type: none;
-	gap: 1rem; /* Reduce gap for vertical layout */
+	gap: 1rem;
+	/* Reduce gap for vertical layout */
+}
+
+.nav-link {
+	font-size: var(--font-size-small);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 4px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+	background-color: var(--color-primary);
+	color: var(--color-light);
 }
 
 .hero {
@@ -259,11 +289,18 @@ a:hover {
 /* Media query for larger screens */
 @media (min-width: 768px) {
 	.nav-container {
-		flex-direction: row; /* Horizontal layout on larger screens */
+		flex-direction: row;
+		/* Horizontal layout on larger screens */
 	}
 
 	.nav-menu {
-		flex-direction: row; /* Horizontal menu on larger screens */
-		gap: 1.5rem; /* Increase gap for horizontal layout */
+		flex-direction: row;
+		/* Horizontal menu on larger screens */
+		gap: 1.5rem;
+		/* Increase gap for horizontal layout */
+	}
+
+	.nav-link {
+		padding: 0.5rem 1rem;
 	}
 }
