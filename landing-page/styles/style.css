@@ -323,6 +323,7 @@ a:hover {
 .cta-heading {
 	font-size: 1.5rem;
 	color: var(--color-light);
+	font-weight: 600;
 }
 
 .cta-text {
