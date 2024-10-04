@@ -55,6 +55,7 @@ body {
 	color: var(--color-dark);
 	text-align: center;
 }
+
 .text-medium {
 	font-size: var(--font-size-medium);
 	color: var(--color-text);
@@ -111,13 +112,11 @@ a:hover {
 .button-secondary {
 	background-color: var(--color-light);
 	color: var(--color-primary);
-	/* border: 2px solid var(--color-primary); */
 }
 
 .button-secondary:hover {
 	background-color: var(--color-text);
 	color: var(--color-primary-hover);
-	/* border-color: var(--color-primary-hover); */
 }
 
 .img-responsive {
@@ -133,6 +132,14 @@ a:hover {
 	padding: var(--spacing-medium) 10%;
 }
 
+.nav-container {
+	display: flex;
+	flex-direction: column; /* Stack items vertically on small screens */
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--spacing-small); /* Add space between logo and menu */
+}
+
 .logo-container > a {
 	font-size: 1.5rem;
 	font-weight: 900;
@@ -142,17 +149,12 @@ a:hover {
 	color: var(--color-accent);
 }
 
-.nav-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
 .nav-menu {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column; /* Stack menu items vertically on small screens */
+	align-items: center;
 	list-style-type: none;
-	gap: 1.5rem;
+	gap: 1rem; /* Reduce gap for vertical layout */
 }
 
 .hero {
@@ -226,7 +228,7 @@ a:hover {
 }
 
 .card-description {
-	color: var(--color-dark)
+	color: var(--color-dark);
 }
 
 .cta-container {
@@ -252,4 +254,16 @@ a:hover {
 	padding: var(--spacing-small) 0;
 	width: 100%;
 	text-align: center;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+	.nav-container {
+		flex-direction: row; /* Horizontal layout on larger screens */
+	}
+
+	.nav-menu {
+		flex-direction: row; /* Horizontal menu on larger screens */
+		gap: 1.5rem; /* Increase gap for horizontal layout */
+	}
 }
