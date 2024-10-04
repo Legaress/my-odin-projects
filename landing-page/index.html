@@ -7,12 +7,13 @@
     <meta name="description" content="Discover the world of pretty cats on our awesome landing page">
     <title>Pretty Cats - Your Purrfect Feline Destination</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
         <header class="header">
-            <nav class="nav-container">
+            <nav class="nav-container" aria-label="Main navigation">
                 <div class="logo-container">
                     <a href="#" class="logo">SH Pretty Cat</a>
                 </div>
@@ -33,51 +34,59 @@
 
                 <div class="hero-image">
                     <img src="./images/pexels-chevonrossouw-2558605.jpg" alt="A beautiful cat with mesmerizing eyes"
-                        class="img-responsive" width="500" height="300">
+                        class="img-responsive" width="500" height="300" loading="lazy">
                 </div>
             </div>
         </header>
 
-        <main class="main">
+        <main id="main-content" class="main">
             <section class="info-section">
                 <h2 class="heading-medium">Discover the World of Pretty Cats</h2>
 
                 <div class="cards-container">
-                    <div class="info-card">
+                    <article class="info-card">
                         <div class="card">
-                            <img src="./images/persian-cat.jpg" alt="Persian cat" class="card-image">
+                            <img src="./images/pexels-ekaterina-bolovtsova-7445055.jpg" alt="Persian cat" class="card-image" loading="lazy">
                         </div>
-                        <h3 class="card-title">Persian Cats</h3>
-                        <p class="card-description">Known for their luxurious long fur and sweet personalities, Persian
+                        <h3 class="card-title heading-small">Persian Cats</h3>
+                        <p class="card-description text-small">Known for their luxurious long fur and sweet personalities, Persian
                             cats are the epitome of feline elegance.</p>
-                        <a href="#persian" class="button button-secondary">Learn More</a>
-                    </div>
+                        <a href="#persian" class="button button-secondary" rel="noopener">Learn More</a>
+                    </article>
 
                     <div class="info-card">
                         <div class="card">
-                            <img src="./images/siamese-cat.jpg" alt="Siamese cat" class="card-image">
+                            <img src="./images/cute-3252251_1280.jpg" alt="Siamese cat" class="card-image" loading="lazy">
                         </div>
-                        <h3 class="card-title">Siamese Cats</h3>
-                        <p class="card-description">With their striking blue eyes and sleek coats, Siamese cats are
+                        <h3 class="card-title heading-small">Siamese Cats</h3>
+                        <p class="card-description text-small">With their striking blue eyes and sleek coats, Siamese cats are
                             known for their intelligence and vocal nature.</p>
-                        <a href="#siamese" class="button button-secondary">Learn More</a>
+                        <a href="#siamese" class="button button-secondary" rel="noopener">Learn More</a>
                     </div>
 
                     <div class="info-card">
                         <div class="card">
-                            <img src="./images/maine-coon-cat.jpg" alt="Maine Coon cat" class="card-image">
+                            <img src="./images/cat-7263838_1280.jpg" alt="Maine Coon cat" class="card-image" loading="lazy">
                         </div>
-                        <h3 class="card-title">Maine Coon Cats</h3>
-                        <p class="card-description">Gentle giants of the cat world, Maine Coons are loved for their
+                        <h3 class="card-title heading-small">Maine Coon Cats</h3>
+                        <p class="card-description text-small">Gentle giants of the cat world, Maine Coons are loved for their
                             large size, tufted ears, and friendly demeanor.</p>
-                        <a href="#maine-coon" class="button button-secondary">Learn More</a>
+                        <a href="#maine-coon" class="button button-secondary" rel="noopener">Learn More</a>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p class="text-small text-center">&copy; 2024 Pretty Cats Paradise. All rights reserved.</p>
+            <p class="text-small">&copy; 2024 Pretty Cats Paradise. All rights reserved.</p>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a class="text-small" href="#privacy">Privacy Policy</a></li>
+                    <li><a class="text-small" href="#terms">Terms of Service</a></li>
+                    <li><a class="text-small" href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p class="text-small">Designed with <span aria-label="love">❤️</span> for cat lovers</p>
         </footer>
     </div>
 </body>
