@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400&display=swap');
+
+:root {
+    --main-bg-color: #f0f0f0;
+    --card-bg-color: white;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Comic Neue', cursive;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+}
+
+.game {
+    text-align: center;
+    background: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.img-wrapper {
+    flex: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.img-wrapper:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
