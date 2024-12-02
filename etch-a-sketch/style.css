@@ -1,0 +1,55 @@
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: center;
+    flex: auto;
+}
+
+/* Button styles */
+.button {
+    flex: 1; /* Button takes full width of header */
+}
+
+/* Grid container styles */
+.grid-container {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Allow items to wrap into multiple rows */
+    gap: 0.375rem; /* Space between boxes (6px) */
+    padding: 0.5rem; /* Padding around the grid container (8px) */
+}
+
+/* Row container styles */
+.row-container {
+    display: flex;
+    flex: auto;
+    gap: 0.375rem; /* Space between boxes in a row (6px) */
+}
+
+/* Box styles */
+.box {
+    flex: 1 0 30px; /* Each box takes equal space in the row */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 0.5rem; /* Rounded corners (8px) */
+    background-color: #f9f9f9; /* Light background color */
+    display: flex; /* Enable Flexbox for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Painted box style */
+.painted {
+    background-color: blue; /* Change background color when painted */
+}
+
+/* Hover effect for boxes */
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover for interactivity */
+}
