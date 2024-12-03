@@ -1,32 +1,48 @@
-const MAX_ROW = 20;
-const MAX_COLUMN = 20;
+const MAX_DIMENSION = 100; // Maximum dimension for the grid
+let currentDimension = 16;  // Default dimension
 
-// Function to create a grid of boxes
-const createGrid = (container) => {
-    const fragment = document.createDocumentFragment();
+// Grid Manager Object
+const GridManager = {
+    createGrid(container) {
+        const fragment = document.createDocumentFragment();
 
-    for (let row = 0; row < MAX_ROW; row++) {
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('row-container');
+        for (let row = 0; row < currentDimension; row++) {
+            const rowDiv = document.createElement('div');
+            rowDiv.classList.add('row-container');
 
-        for (let column = 0; column < MAX_COLUMN; column++) {
-            const boxDiv = document.createElement('div');
-            boxDiv.classList.add('box');
-            rowDiv.appendChild(boxDiv);
+            for (let column = 0; column < currentDimension; column++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('grid-item');
+                rowDiv.appendChild(itemDiv);
+            }
+
+            fragment.appendChild(rowDiv);
         }
 
-        fragment.appendChild(rowDiv);
-    }
+        container.appendChild(fragment);
+    },
 
-    container.appendChild(fragment);
-};
+    handleGridMouseOver(event) {
+        const target = event.target;
 
-// Function to handle mouseover event on boxes
-const handleBoxMouseOver = (event) => {
-    const target = event.target;
+        if (target.classList.contains('grid-item')) {
+            target.classList.add('painted');
+        }
+    },
 
-    if (target.classList.contains('box')) {
-        target.classList.add('painted');
+    setDimensions(dimensions) {
+        if (dimensions >= 1 && dimensions <= MAX_DIMENSION) {
+            currentDimension = dimensions;
+            this.refreshGrid();
+        } else {
+            alert(`Please enter a number between 1 and ${MAX_DIMENSION}.`);
+        }
+    },
+
+    refreshGrid() {
+        const gridContainer = document.querySelector('.grid-container');
+        gridContainer.innerHTML = ''; // Clear existing grid
+        this.createGrid(gridContainer);
     }
 };
 
@@ -34,7 +50,23 @@ const handleBoxMouseOver = (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector('.grid-container');
 
-    // Create the grid and set up the event listener
-    createGrid(gridContainer);
-    gridContainer.addEventListener('mouseover', handleBoxMouseOver);
+    // Create the initial grid
+    GridManager.createGrid(gridContainer);
+    
+    // Set up event listener for mouseover
+    gridContainer.addEventListener('mouseover', (event) => GridManager.handleGridMouseOver(event));
+
+    // Set up event listener for dimension setting button
+    const setDimensionsButton = document.querySelector('#set-dimensions');
+    setDimensionsButton.addEventListener('click', () => {
+        let dimensions;
+        do {
+            dimensions = Number(prompt("Set a dimension of the grid (1-100)", '16'));
+        } while (isNaN(dimensions) || dimensions < 1 || dimensions > MAX_DIMENSION);
+
+        const spanDimensions = document.querySelector('span');
+        spanDimensions.textContent = `${dimensions}x${dimensions}`;
+        
+        GridManager.setDimensions(dimensions);
+    });
 });

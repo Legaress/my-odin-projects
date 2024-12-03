@@ -1,55 +1,117 @@
-/* Container styles */
+/* style.css */
+
+/* Root Variables */
+:root {
+    /* Colors */
+    --color-primary: #3882F6;
+    --color-primary-hover: #2563EB;
+    --color-dark: #1F2937;
+    --color-light: #F9FAF8;
+    --color-text: #E5E7EB;
+    --color-secondary: #6B7280;
+
+    /* Font Sizes */
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1.125rem;
+    --font-size-large: 2.25rem;
+
+    /* Spacing */
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+
+    /* Font Families */
+    --font-main: 'Roboto', sans-serif;
+}
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-light);
+}
+
+/* Container Styles */
 .container {
     display: flex;
     flex-direction: column;
+    min-height: 100vh; 
+    justify-content: space-between;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-small);
 }
 
-/* Header styles */
+/* Header Styles */
 .header {
     display: flex;
-    justify-content: center;
-    flex: auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    padding: var(--spacing-medium) 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: var(--font-size-medium);
+    font-weight: bold;
 }
 
-/* Button styles */
-.button {
-    flex: 1; /* Button takes full width of header */
+h1 {
+    font-size: var(--font-size-large);
+    color: var(--color-dark);
 }
 
-/* Grid container styles */
-.grid-container {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Allow items to wrap into multiple rows */
-    gap: 0.375rem; /* Space between boxes (6px) */
-    padding: 0.5rem; /* Padding around the grid container (8px) */
-}
-
-/* Row container styles */
-.row-container {
+.controls {
     display: flex;
-    flex: auto;
-    gap: 0.375rem; /* Space between boxes in a row (6px) */
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-small);
 }
 
-/* Box styles */
-.box {
-    flex: 1 0 30px; /* Each box takes equal space in the row */
-    border: 2px solid #ccc; /* Light gray border */
-    border-radius: 0.5rem; /* Rounded corners (8px) */
-    background-color: #f9f9f9; /* Light background color */
-    display: flex; /* Enable Flexbox for centering content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+/* Button Styles */
+.button {
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: var(--font-size-medium);
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline-offset: 2px; 
 }
 
-/* Painted box style */
+.button:hover {
+   background-color: var(--color-primary-hover);
+}
+
+/* Grid Container Styles */
+.grid-container {
+   flex-grow: 1; 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: stretch; 
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.row-container {
+   display: flex; 
+   flex-grow: 1; 
+   justify-content: stretch; 
+}
+
+.grid-item {
+   flex-grow: 1; 
+   background-color: var(--color-light); 
+   border-width: thin; 
+   border-style: solid; 
+   border-color: var(--color-light); 
+}
+
 .painted {
-    background-color: blue; /* Change background color when painted */
-}
-
-/* Hover effect for boxes */
-.box:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover for interactivity */
+   background-color: var(--color-primary-hover); 
 }
