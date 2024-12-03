@@ -5,17 +5,18 @@ let currentDimension = 16;  // Default dimension
 const GridManager = {
     createGrid(container) {
         const fragment = document.createDocumentFragment();
-
-        for (let row = 0; row < currentDimension; row++) {
+        
+        // Create rows and items in a single loop to reduce DOM manipulations
+        for (let i = 0; i < currentDimension; i++) {
             const rowDiv = document.createElement('div');
             rowDiv.classList.add('row-container');
 
-            for (let column = 0; column < currentDimension; column++) {
+            for (let j = 0; j < currentDimension; j++) {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('grid-item');
+                itemDiv.style.opacity = '0';
                 rowDiv.appendChild(itemDiv);
             }
-
             fragment.appendChild(rowDiv);
         }
 
@@ -25,9 +26,15 @@ const GridManager = {
     handleGridMouseOver(event) {
         const target = event.target;
 
-        if (target.classList.contains('grid-item')) {
+        if (target.classList.contains('grid-item') && !target.classList.contains('painted')) {
             target.classList.add('painted');
+            target.style.backgroundColor = this.getRandomColor();
         }
+        target.style.opacity = Math.min(parseFloat(target.style.opacity) + 0.1 , 1);
+    },
+
+    getRandomColor() {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6,'0');
     },
 
     setDimensions(dimensions) {
@@ -52,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create the initial grid
     GridManager.createGrid(gridContainer);
-    
-    // Set up event listener for mouseover
+
+    // Set up event listener for mouseover using event delegation
     gridContainer.addEventListener('mouseover', (event) => GridManager.handleGridMouseOver(event));
 
     // Set up event listener for dimension setting button
@@ -66,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const spanDimensions = document.querySelector('span');
         spanDimensions.textContent = `${dimensions}x${dimensions}`;
-        
+
         GridManager.setDimensions(dimensions);
     });
 });
