@@ -9,7 +9,15 @@
     --color-light: #F9FAF8;
     --color-text: #E5E7EB;
     --color-secondary: #6B7280;
+    
+    /* Add border color and shadow variables */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px var(--border-color);
+    --shadow-lg: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
 
+    /* Add border radius variable */
+    --border-radius: 0.5rem;
+    
     /* Font Sizes */
     --font-size-small: 0.875rem;
     --font-size-medium: 1.125rem;
@@ -43,6 +51,8 @@ body {
     justify-content: space-between;
     gap: var(--spacing-medium);
     padding: var(--spacing-small);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Header Styles */
@@ -53,8 +63,8 @@ body {
     align-items: center;
     background-color: var(--color-light);
     color: var(--color-dark);
-    padding: var(--spacing-medium) 10%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-medium) clamp(1rem, 5%, 10%);
+    box-shadow: var(--shadow-sm);
     font-size: var(--font-size-medium);
     font-weight: bold;
     gap: var(--spacing-medium);
@@ -76,7 +86,7 @@ h1 {
 /* Button Styles */
 .button {
     border: none;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     font-weight: bold;
     font-size: var(--font-size-medium);
     padding: 0.75rem 1.5rem;
@@ -86,7 +96,7 @@ h1 {
     color: var(--color-light);
     transition: background-color 0.3s ease, color 0.3s ease;
     outline-offset: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .button:hover {
@@ -99,7 +109,9 @@ h1 {
    display: flex; 
    flex-direction: column; 
    justify-content: stretch; 
-   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+   box-shadow: var(--shadow-lg);
+   border-radius: var(--border-radius);
+   overflow: hidden;
 }
 
 .row-container {
@@ -111,7 +123,22 @@ h1 {
 .grid-item {
    flex-grow: 1; 
    background-color: var(--color-light); 
-   border-width: thin; 
-   border-style: solid; 
-   border-color: var(--color-light); 
+   border: 1px solid var(--border-color);
+   transition: background-color 0.2s ease;
+}
+
+.grid-item:hover {
+    background-color: var(--color-text);
+}
+
+/* Add responsive media queries */
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-small);
+    }
+    
+    .controls {
+        width: 100%;
+        justify-content: center;
+    }
 }
