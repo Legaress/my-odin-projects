@@ -14,7 +14,7 @@ Welcome to my learning journey through The Odin Project's Foundations course! Th
 |---------|-------------|----------------|-------|
 | 🍳 **Recipes** | A simple recipe website that demonstrates HTML fundamentals. | HTML structure, Lists, Links, Images | [Code](https://github.com/Legaress/odin-recipes) • [Demo](https://legaress.github.io/odin-recipes/) |
 | 🎯 **Landing Page** | A responsive landing page design showcasing CSS techniques. | Flexbox, CSS styling, Layout design | [Code](https://github.com/Legaress/my-odin-projects) • [Demo](https://legaress.github.io/landing-page/) |
-| 🎮 **Rock Paper Scissors** | An interactive game built using JavaScript. | DOM manipulation, Event handling, Game logic | [Code](https://github.com/Legaress/my-odin-projects/tree/main/rock-paper-scissors) • [Demo](https://legaress.github.io/my-odin-projects/rock-paper-scissors/) |
+| 🎮 **Rock Paper Scissors** | An interactive game built using JavaScript. | DOM manipulation, Event handling, Game logic | [Code](https://github.com/Legaress/rock-paper-scissors) • [Demo](https://legaress.github.io/rock-paper-scissors/) |
 | 🎨 **Etch a Sketch** | A digital Etch A Sketch simulation with color features. | Flexbox, JavaScript, DOM manipulation | [Code](https://github.com/Legaress/my-odin-projects/tree/main/etch-a-sketch) • [Demo](https://legaress.github.io/my-odin-projects/etch-a-sketch/) |
 
 ## 🌟 Key Learning Outcomes
